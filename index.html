@@ -25,47 +25,47 @@
   body{font-family:var(--body);color:var(--ink);background:var(--bg);
     -webkit-font-smoothing:antialiased;overflow:hidden;user-select:none;-webkit-tap-highlight-color:transparent}
 
-  /* ============ TWO-COLUMN LAYOUT ============ */
   #app{height:100vh;display:flex}
   .side{flex:0 0 33%;max-width:460px;min-width:270px;display:flex;flex-direction:column;
-    background:var(--side);border-right:1px solid var(--line);
-    padding:clamp(16px,2vw,32px);gap:clamp(14px,2.4vh,26px)}
+    background:var(--side);border-right:1px solid var(--line);padding:clamp(16px,2vw,32px);gap:clamp(14px,2.4vh,26px)}
   .board{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;background:var(--bg);
-    padding:clamp(16px,2vw,32px);gap:clamp(12px,1.6vh,20px)}
+    padding:clamp(16px,2vw,32px);gap:clamp(12px,1.6vh,18px)}
   .divide{border-top:1px solid var(--line)}
 
-  /* ---- clock ---- */
+  /* clock */
   .clock{font-family:var(--display);font-weight:600;font-size:clamp(48px,7vw,108px);line-height:.82;
     color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.015em}
-  .datestr{font-size:clamp(12px,1.4vw,16px);letter-spacing:.16em;color:var(--faint);margin-top:12px;
+  .datestr{font-size:clamp(15px,1.9vw,22px);letter-spacing:.1em;color:var(--ink2);margin-top:13px;
     font-weight:600;text-transform:uppercase}
 
-  /* ---- weather ---- */
-  .wx{display:flex;flex-direction:column;gap:11px}
+  /* weather */
+  .wx{display:flex;flex-direction:column;gap:12px}
   .wxlabel{font-size:11px;letter-spacing:.2em;color:var(--faint);font-weight:600;text-transform:uppercase}
   .temp-row{display:flex;align-items:baseline;gap:13px}
   .temp{font-family:var(--display);font-weight:600;font-size:clamp(42px,6vw,92px);line-height:.85;
     color:var(--ink);font-variant-numeric:tabular-nums}
-  .place{font-size:clamp(11px,1.2vw,13px);letter-spacing:.14em;color:var(--faint);text-transform:uppercase;font-weight:600}
-  .signals{display:flex;flex-wrap:wrap;gap:7px;min-height:1px}
-  .sig{font-size:clamp(11px,1.2vw,13px);letter-spacing:.04em;font-weight:600;border-radius:999px;padding:5px 12px;color:#fff}
-  .sig.dim{background:var(--panel);color:var(--faint);border:1px solid var(--line)}
+  .place{font-size:clamp(11px,1.2vw,13px);letter-spacing:.12em;color:var(--faint);text-transform:uppercase;font-weight:600}
+  .signals{display:flex;flex-direction:column;gap:9px;min-height:1px}
+  .sig-row{display:flex;align-items:center;gap:10px;font-size:clamp(14px,1.6vw,18px);font-weight:600;color:var(--ink)}
+  .sig-row.dim{color:var(--faint);font-weight:500}
+  .sig-dot{width:12px;height:12px;border-radius:50%;flex:0 0 auto;background:var(--green)}
+  .sig-dot.red{background:var(--red)}.sig-dot.amber{background:var(--amber)}.sig-dot.green{background:var(--green)}.sig-dot.blue{background:var(--blue)}
+  .sig-txt.red{color:var(--red)}.sig-txt.amber{color:var(--amber)}.sig-txt.blue{color:var(--blue)}
   .pulse{animation:pulse 1.2s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
 
-  /* ---- calendar ---- */
+  /* calendar */
   .cal{margin-top:auto;display:flex;flex-direction:column;gap:11px}
-  .cal-head{display:flex;align-items:baseline;justify-content:space-between}
   .cal-title{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.4vw,32px);color:var(--ink)}
   .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:clamp(2px,.5vh,6px)}
-  .cal-grid .dow{font-size:clamp(9px,1vw,11px);letter-spacing:.03em;text-align:center;color:var(--faint);font-weight:600;padding-bottom:3px}
+  .cal-grid .dow{font-size:clamp(12px,1.4vw,16px);letter-spacing:.02em;text-align:center;color:var(--faint);font-weight:700;padding-bottom:4px}
   .cal-cell{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;
     font-size:clamp(12px,1.5vw,17px);color:var(--ink);border-radius:10px;font-weight:500}
   .cal-cell.sun{color:var(--red)} .cal-cell.sat{color:var(--blue)}
   .cal-cell.muted{opacity:0}
   .cal-cell.today{background:var(--accent);color:#fff;font-weight:700;box-shadow:0 3px 10px rgba(14,155,106,.32)}
 
-  /* ============ BUS BOARD ============ */
+  /* board head */
   .board-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
     border-bottom:1px solid var(--line);padding-bottom:clamp(9px,1.3vh,15px)}
   .dest{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,56px);color:var(--ink);
@@ -78,7 +78,7 @@
   #stage{flex:1 1 auto;display:flex;flex-direction:column;gap:clamp(9px,1.4vh,16px);min-height:0}
 
   .hero{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--panel);
-    padding:clamp(15px,2.2vh,28px) clamp(18px,2.4vw,32px);display:flex;align-items:center;gap:clamp(15px,2.4vw,32px);
+    padding:clamp(15px,2.2vh,26px) clamp(18px,2.4vw,30px);display:flex;align-items:center;gap:clamp(15px,2.4vw,30px);
     overflow:hidden;box-shadow:0 1px 3px rgba(23,33,29,.05)}
   .hero.red{background:#fdeded;border-color:#f2cccc}
   .hero.amber{background:#fdf2e8;border-color:#f0d5b7}
@@ -87,13 +87,16 @@
   .badge{font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;
     border-radius:16px;line-height:1;padding:.1em .26em;min-width:1.5em;text-align:center;color:#fff}
   .badge.red{background:var(--red)} .badge.amber{background:var(--amber)} .badge.green{background:var(--green)}
-  .hero .badge{font-size:clamp(42px,7.5vw,92px);border-radius:20px}
+  .hero .badge{font-size:clamp(40px,7vw,84px);border-radius:20px}
   .hero-mid{flex:1 1 auto;min-width:0}
-  .hero-min{font-family:var(--display);font-weight:700;font-size:clamp(58px,12vw,148px);line-height:.72;
+  .hero-min{font-family:var(--display);font-weight:700;font-size:clamp(54px,11vw,132px);line-height:.72;
     font-variant-numeric:tabular-nums;color:var(--ink)}
   .hero-min .unit{font-size:.26em;letter-spacing:.06em;margin-left:.28em;color:var(--ink2);font-weight:600}
-  .hero-sub{margin-top:10px;font-size:clamp(12px,1.5vw,18px);letter-spacing:.04em;color:var(--ink2);font-weight:600;
+  .hero-sub{margin-top:10px;font-size:clamp(13px,1.6vw,19px);letter-spacing:.02em;color:var(--ink);font-weight:700;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase}
+  .hero-sub2{margin-top:3px;font-size:clamp(11px,1.2vw,14px);color:var(--faint);font-weight:500;letter-spacing:.04em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase}
+  .hero-ride{margin-top:8px;font-size:clamp(11px,1.3vw,15px);color:var(--accent-dk);font-weight:600;letter-spacing:.01em}
   .hero-status{flex:0 0 auto;text-align:right;font-size:clamp(13px,1.7vw,24px);letter-spacing:.04em;line-height:1.15;font-weight:700}
   .hero-status .dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:currentColor;margin-left:.5em;vertical-align:middle}
   .red .dot{animation:pulse 1.2s ease-in-out infinite}
@@ -101,14 +104,13 @@
   .rows{flex:1 1 auto;overflow:auto;display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);padding-right:2px}
   .rows::-webkit-scrollbar{width:6px}.rows::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
   .row{display:flex;align-items:center;gap:clamp(13px,2vw,26px);border:1px solid var(--line);border-radius:14px;
-    background:#fff;padding:clamp(10px,1.5vh,17px) clamp(15px,2vw,24px);box-shadow:0 1px 2px rgba(23,33,29,.04)}
+    background:#fff;padding:clamp(10px,1.5vh,16px) clamp(15px,2vw,24px);box-shadow:0 1px 2px rgba(23,33,29,.04)}
   .row .badge{font-size:clamp(26px,3.8vw,44px);border-radius:12px}
   .row-name{flex:1 1 auto;min-width:0;font-size:clamp(13px,1.6vw,20px);letter-spacing:.02em;color:var(--ink);font-weight:600;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase}
   .row-name span{display:block;color:var(--faint);font-size:.78em;letter-spacing:.04em;margin-top:3px;font-weight:500}
   .row-eta{flex:0 0 auto;text-align:right}
-  .row-min{font-family:var(--display);font-weight:700;font-size:clamp(38px,5.4vw,64px);line-height:.8;
-    font-variant-numeric:tabular-nums;color:var(--ink)}
+  .row-min{font-family:var(--display);font-weight:700;font-size:clamp(36px,5vw,60px);line-height:.8;font-variant-numeric:tabular-nums;color:var(--ink)}
   .row-min .unit{font-size:.28em;letter-spacing:.06em;margin-left:.22em;color:var(--ink2);font-weight:600}
   .row-next{font-size:clamp(10px,1.1vw,13px);letter-spacing:.05em;color:var(--faint);margin-top:6px;font-weight:500}
   .row-tag{font-size:clamp(10px,1.1vw,13px);letter-spacing:.08em;margin-top:5px;font-weight:700}
@@ -116,48 +118,51 @@
   .empty{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--ink2);text-align:center;padding:20px}
   .empty .big{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,56px);color:var(--ink)}
 
+  /* MTR panel */
+  .mtr{border:1px solid var(--line);border-radius:14px;background:var(--panel);
+    padding:clamp(11px,1.5vh,17px) clamp(15px,2vw,22px);display:flex;flex-direction:column;gap:9px}
+  .mtr-head{font-size:clamp(12px,1.4vw,15px);font-weight:700;color:var(--ink);letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+  .mtr-badge{background:var(--accent);color:#fff;font-weight:700;font-size:.82em;padding:2px 9px;border-radius:6px;letter-spacing:.04em}
+  .mtr-line{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .mtr-dir{font-size:clamp(12px,1.5vw,17px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mtr-times{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.6vw,32px);color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .mtr-off{font-size:12px;color:var(--faint);font-weight:500}
+
   .board-foot{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.6vw,20px);
-    border-top:1px solid var(--line);padding-top:clamp(9px,1.2vh,15px);
+    border-top:1px solid var(--line);padding-top:clamp(9px,1.2vh,14px);
     font-size:clamp(11px,1.3vw,15px);letter-spacing:.08em;color:var(--ink2);font-weight:600;font-variant-numeric:tabular-nums}
   .iconbtn{background:#fff;border:1px solid var(--line);color:var(--ink2);font-family:var(--body);font-weight:600;
     font-size:13px;border-radius:9px;padding:7px 12px;cursor:pointer;letter-spacing:.06em}
   .iconbtn:hover,.iconbtn.on{color:var(--accent);border-color:var(--accent)}
 
-  /* colour utilities (defined after element rules so they win on equal specificity) */
   .green{color:var(--green)} .amber{color:var(--amber)} .red{color:var(--red)} .blue{color:var(--blue)}
 
-  /* portrait / small: stack */
   @media (max-aspect-ratio:1/1), (max-width:820px){
     #app{flex-direction:column;overflow:auto;height:auto;min-height:100vh}
-    .side{flex:none;max-width:none;border-right:none;border-bottom:1px solid var(--line);
-      flex-direction:row;flex-wrap:wrap;align-items:flex-start}
+    .side{flex:none;max-width:none;border-right:none;border-bottom:1px solid var(--line);flex-direction:row;flex-wrap:wrap;align-items:flex-start}
     .side>*{flex:1 1 40%}
     .cal{margin-top:0;flex-basis:100%}
     .clock{font-size:64px}
   }
 
-  /* ============ CONFIG OVERLAY ============ */
+  /* config overlay */
   .overlay{position:fixed;inset:0;z-index:20;background:rgba(23,33,29,.42);backdrop-filter:blur(4px);
     display:none;align-items:flex-start;justify-content:center;padding:24px;overflow:auto}
   .overlay.show{display:flex}
-  .sheet{width:min(560px,100%);background:#fff;border:1px solid var(--line);border-radius:18px;
-    padding:clamp(18px,3vw,28px);box-shadow:0 24px 60px rgba(23,33,29,.25)}
+  .sheet{width:min(560px,100%);background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,28px);box-shadow:0 24px 60px rgba(23,33,29,.25)}
   .sheet h2{font-family:var(--display);font-weight:700;font-size:30px;color:var(--ink);margin-bottom:4px}
   .sheet .lead{color:var(--faint);font-size:13px;letter-spacing:.04em;margin-bottom:20px}
   .field{margin-bottom:16px}
   .field label{display:block;font-size:12px;letter-spacing:.1em;color:var(--ink2);margin-bottom:7px;font-weight:600;text-transform:uppercase}
-  input,select{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);font-family:var(--body);
-    font-size:16px;padding:11px 13px;border-radius:10px;letter-spacing:.01em;outline:none}
+  input,select{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);font-family:var(--body);font-size:16px;padding:11px 13px;border-radius:10px;letter-spacing:.01em;outline:none}
   input:focus,select:focus{border-color:var(--accent)}
   .rowflex{display:flex;gap:10px}.rowflex>*{flex:1}
-  .btn{background:var(--accent);color:#fff;border:none;font-family:var(--body);font-weight:700;font-size:15px;
-    letter-spacing:.02em;padding:12px 18px;border-radius:10px;cursor:pointer;width:100%}
+  .btn{background:var(--accent);color:#fff;border:none;font-family:var(--body);font-weight:700;font-size:15px;letter-spacing:.02em;padding:12px 18px;border-radius:10px;cursor:pointer;width:100%}
   .btn:active{transform:translateY(1px)}
   .btn.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line)}
   .btn.ghost:hover{color:var(--accent);border-color:var(--accent)}
   .dirs{display:flex;flex-direction:column;gap:8px;margin-top:4px}
-  .dir-opt{text-align:left;background:#fff;border:1px solid var(--line);color:var(--ink);padding:11px 13px;
-    border-radius:10px;cursor:pointer;font-family:var(--body);font-size:14px;letter-spacing:.01em;font-weight:500}
+  .dir-opt{text-align:left;background:#fff;border:1px solid var(--line);color:var(--ink);padding:11px 13px;border-radius:10px;cursor:pointer;font-family:var(--body);font-size:14px;letter-spacing:.01em;font-weight:500}
   .dir-opt:hover,.dir-opt.sel{border-color:var(--accent);color:var(--accent-dk);background:#f1fbf6}
   .dir-opt small{color:var(--faint);display:block;margin-top:3px}
   .savedlist{margin-top:6px;display:flex;flex-direction:column;gap:8px}
@@ -174,8 +179,6 @@
 </head>
 <body>
 <div id="app">
-
-  <!-- ================= LEFT SIDEBAR ================= -->
   <aside class="side">
     <div>
       <div class="clock" id="clock">--:--</div>
@@ -186,27 +189,27 @@
       <div class="wxlabel">Weather</div>
       <div class="temp-row">
         <div class="temp" id="temp">--&deg;</div>
-        <div class="place" id="place">Tseung Kwan O</div>
+        <div class="place" id="place">Mong Kok</div>
       </div>
       <div class="signals" id="signals"></div>
     </div>
     <div class="divide"></div>
     <div class="cal">
-      <div class="cal-head"><div class="cal-title" id="calTitle">&mdash;</div></div>
+      <div class="cal-title" id="calTitle">&mdash;</div>
       <div class="cal-grid" id="calGrid"></div>
     </div>
   </aside>
 
-  <!-- ================= RIGHT: BUS BOARD ================= -->
   <main class="board">
     <div class="board-head">
-      <div class="dest" id="destLabel">TO LAM TIN</div>
+      <div class="dest" id="destLabel">To LAM TIN</div>
       <div class="head-right">
         <div class="greet" id="greet">GOOD MORNING</div>
         <div class="status" id="statusLine">LIVE</div>
       </div>
     </div>
     <div id="stage"></div>
+    <section class="mtr" id="mtr"></section>
     <div class="board-foot">
       <span id="refresh">&#8635; 0:30</span>
       <button class="iconbtn" id="wakeBtn" title="Keep screen awake">&#9680; WAKE</button>
@@ -215,33 +218,20 @@
   </main>
 </div>
 
-<!-- CONFIG -->
 <div class="overlay" id="overlay">
   <div class="sheet">
     <button class="close-x" id="closeCfg">&times;</button>
     <h2>Board setup</h2>
     <div class="lead">Live KMB / Long Win arrivals &middot; data.gov.hk</div>
-    <div class="field">
-      <label>Board title (right panel)</label>
-      <input id="titleInput" placeholder="TO LAM TIN" maxlength="20">
-    </div>
+    <div class="field"><label>Board title (right panel)</label><input id="titleInput" placeholder="To LAM TIN" maxlength="20"></div>
     <hr>
     <div class="field">
       <label>Add a bus &mdash; step 1 &middot; route number</label>
-      <div class="rowflex">
-        <input id="routeInput" placeholder="e.g. 16" autocomplete="off">
-        <button class="btn ghost" id="findBtn" style="flex:0 0 120px">Find</button>
-      </div>
+      <div class="rowflex"><input id="routeInput" placeholder="e.g. 16" autocomplete="off"><button class="btn ghost" id="findBtn" style="flex:0 0 120px">Find</button></div>
       <div class="status-msg" id="routeMsg"></div>
     </div>
-    <div class="field" id="dirField" style="display:none">
-      <label>Step 2 &middot; direction</label>
-      <div class="dirs" id="dirs"></div>
-    </div>
-    <div class="field" id="stopField" style="display:none">
-      <label>Step 3 &middot; your stop</label>
-      <select id="stopSel"></select>
-    </div>
+    <div class="field" id="dirField" style="display:none"><label>Step 2 &middot; direction</label><div class="dirs" id="dirs"></div></div>
+    <div class="field" id="stopField" style="display:none"><label>Step 3 &middot; your stop</label><select id="stopSel"></select></div>
     <div class="field" id="detailField" style="display:none">
       <div class="rowflex">
         <div><label>Label (optional)</label><input id="labelInput" placeholder="auto"></div>
@@ -269,12 +259,21 @@ const store={
 };
 const $=s=>document.querySelector(s);
 
-/* ---------------- STATE ---------------- */
-let state=store.get('busboard.v2',null)|| store.get('busboard.v1',null) || {title:'TO LAM TIN',watches:[]};
-if(!state.title) state.title='TO LAM TIN';
+let state=store.get('busboard.v2',null)|| store.get('busboard.v1',null) || {title:'To LAM TIN',watches:[]};
+if(!state.title) state.title='To LAM TIN';
 function saveState(){store.set('busboard.v2',state);}
 
-/* ---------------- KMB API ---------------- */
+/* migrations for already-deployed users */
+function migrate(){
+  let ch=false;
+  if(state.title==='TO LAM TIN'){state.title='To LAM TIN';ch=true;}
+  (state.watches||[]).forEach(w=>{
+    if(w.route==='16'&&!w.rideStop){w.rideStop='Kwun Tong Road Sitting-Out Area';w.rideMin=35;ch=true;}
+  });
+  if(ch)saveState();
+}
+
+/* ---------- KMB ---------- */
 const KMB='https://data.etabus.gov.hk/v1/transport/kmb';
 const DAY=24*60*60*1000;
 async function cachedList(key,url,ttl){
@@ -295,23 +294,26 @@ async function getEta(stop,route,st){
   const j=await r.json();return j.data||[];
 }
 
-/* ---------------- WEATHER (HKO) ---------------- */
+/* ---------- WEATHER (HKO) ---------- */
 async function getTemp(){
   try{
     const r=await fetch('https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en');
     const j=await r.json();const list=(j.temperature&&j.temperature.data)||[];
-    const prefer=['Tseung Kwan O','Sai Kung','Kwun Tong','Hong Kong Observatory',"King's Park"];
+    const prefer=["King's Park","Sham Shui Po","Kowloon City","Hong Kong Observatory","Kwun Tong"];
     let hit=null;for(const p of prefer){hit=list.find(x=>x.place===p);if(hit)break;}
     if(!hit)hit=list[0];return hit?Math.round(hit.value):null;
   }catch(e){return null;}
 }
 const SIGMAP={
-  TC1:['T1','amber'],TC3:['T3','amber'],TC8NE:['T8 NE','red'],TC8SE:['T8 SE','red'],
-  TC8NW:['T8 NW','red'],TC8SW:['T8 SW','red'],TC9:['T9','red'],TC10:['T10','red'],
-  WRAINA:['RAIN A','amber'],WRAINR:['RAIN R','red'],WRAINB:['RAIN B','red'],
-  WTS:['T-STORM','amber'],WMSGNL:['MONSOON','amber'],WHOT:['V.HOT','amber'],WCOLD:['COLD','blue'],
-  WFROST:['FROST','blue'],WL:['LANDSLIP','amber'],WFNTSA:['NT FLOOD','amber'],WTMW:['TSUNAMI','red'],
-  WFIREY:['FIRE Y','amber'],WFIRER:['FIRE R','red']
+  TC1:['Standby Signal No. 1','amber'],TC3:['Strong Wind Signal No. 3','amber'],
+  TC8NE:['Gale/Storm Signal No. 8 (NE)','red'],TC8SE:['Gale/Storm Signal No. 8 (SE)','red'],
+  TC8NW:['Gale/Storm Signal No. 8 (NW)','red'],TC8SW:['Gale/Storm Signal No. 8 (SW)','red'],
+  TC9:['Increasing Gale Signal No. 9','red'],TC10:['Hurricane Signal No. 10','red'],
+  WRAINA:['Amber Rainstorm Warning','amber'],WRAINR:['Red Rainstorm Warning','red'],WRAINB:['Black Rainstorm Warning','red'],
+  WTS:['Thunderstorm Warning','amber'],WMSGNL:['Strong Monsoon Signal','amber'],
+  WHOT:['Very Hot Weather Warning','amber'],WCOLD:['Cold Weather Warning','blue'],WFROST:['Frost Warning','blue'],
+  WL:['Landslip Warning','amber'],WFNTSA:['Flooding in Northern NT','amber'],WTMW:['Tsunami Warning','red'],
+  WFIREY:['Yellow Fire Danger Warning','amber'],WFIRER:['Red Fire Danger Warning','red']
 };
 async function getWarnings(){
   try{
@@ -320,7 +322,7 @@ async function getWarnings(){
     for(const k in j){
       const w=j[k];if(!w)continue;
       if(w.actionCode&&w.actionCode==='CANCEL')continue;
-      const code=w.code||k;const m=SIGMAP[code]||[ (w.name||code).toUpperCase().slice(0,10), 'amber'];
+      const code=w.code||k;const m=SIGMAP[code]||[w.name||code,'amber'];
       out.push({label:m[0],cls:m[1],hot:m[1]==='red'});
     }
     return out;
@@ -329,16 +331,36 @@ async function getWarnings(){
 function renderWeather(temp,warns){
   if(temp!=null)$('#temp').innerHTML=temp+'&deg;';
   const box=$('#signals');
-  if(warns===null){box.innerHTML='<span class="sig dim">SIGNALS OFFLINE</span>';return;}
-  if(warns.length===0){box.innerHTML='<span class="sig dim">NO WARNINGS</span>';return;}
-  box.innerHTML=warns.map(w=>`<span class="sig ${w.cls} ${w.hot?'pulse':''}">${w.label}</span>`).join('');
-}
-async function refreshWeather(){
-  const [t,w]=await Promise.all([getTemp(),getWarnings()]);
-  renderWeather(t,w);
+  if(warns===null){box.innerHTML='<div class="sig-row dim">Signals offline</div>';return;}
+  if(warns.length===0){box.innerHTML='<div class="sig-row dim"><span class="sig-dot green"></span>No warnings in force</div>';return;}
+  box.innerHTML=warns.map(w=>`<div class="sig-row"><span class="sig-dot ${w.cls} ${w.hot?'pulse':''}"></span><span class="sig-txt ${w.cls}">${w.label}</span></div>`).join('');
 }
 
-/* ---------------- CALENDAR (offline month grid) ---------------- */
+/* ---------- MTR (Olympic, Tung Chung Line) ---------- */
+const MTR_CFG={line:'TCL',sta:'OLY',name:'Olympic',lineName:'Tung Chung Line'};
+const MTR_STA={HOK:'Hong Kong',KOW:'Kowloon',NAC:'Nam Cheong',LAK:'Lai King',TSY:'Tsing Yi',SUN:'Sunny Bay',TUC:'Tung Chung',OLY:'Olympic',AIR:'Airport',AWE:'AsiaWorld-Expo'};
+async function getMtr(){
+  try{
+    const r=await fetch(`https://rt.data.gov.hk/v1/transport/mtr/getSchedule.php?line=${MTR_CFG.line}&sta=${MTR_CFG.sta}`);
+    const j=await r.json();
+    const d=j.data&&j.data[`${MTR_CFG.line}-${MTR_CFG.sta}`];
+    if(!d)return{up:[],down:[]};
+    const map=a=>(a||[]).slice(0,3).map(t=>({min:parseInt(t.ttnt,10),dest:MTR_STA[t.dest]||t.dest}));
+    return{up:map(d.UP),down:map(d.DOWN)};
+  }catch(e){return null;}
+}
+function renderMtr(m){
+  const box=$('#mtr');
+  if(m===null){box.innerHTML=`<div class="mtr-head"><span class="mtr-badge">MTR</span> ${MTR_CFG.name} &middot; ${MTR_CFG.lineName}</div><div class="mtr-off">Live train info offline</div>`;return;}
+  const line=a=>{
+    if(!a.length)return `<div class="mtr-line"><span class="mtr-dir">&mdash;</span><span class="mtr-times">&mdash;</span></div>`;
+    const times=a.map(t=>isNaN(t.min)?'--':(t.min<=0?'Now':t.min+'m')).join(' &middot; ');
+    return `<div class="mtr-line"><span class="mtr-dir">&rarr; ${a[0].dest}</span><span class="mtr-times">${times}</span></div>`;
+  };
+  box.innerHTML=`<div class="mtr-head"><span class="mtr-badge">MTR</span> ${MTR_CFG.name} &middot; ${MTR_CFG.lineName}</div>${line(m.down)}${line(m.up)}`;
+}
+
+/* ---------- CALENDAR ---------- */
 const MONTHS=['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
 let calKey='';
 function renderCalendar(force){
@@ -346,20 +368,16 @@ function renderCalendar(force){
   if(key===calKey&&!force)return;calKey=key;
   const y=d.getFullYear(),mo=d.getMonth(),today=d.getDate();
   $('#calTitle').textContent=`${MONTHS[mo]} ${y}`;
-  const first=new Date(y,mo,1).getDay();
-  const days=new Date(y,mo+1,0).getDate();
+  const first=new Date(y,mo,1).getDay(),days=new Date(y,mo+1,0).getDate();
   const dow=['S','M','T','W','T','F','S'];
   let html=dow.map((x,i)=>`<div class="dow ${i===0?'sun':''} ${i===6?'sat':''}">${x}</div>`).join('');
   for(let i=0;i<first;i++)html+=`<div class="cal-cell muted"></div>`;
-  for(let dnum=1;dnum<=days;dnum++){
-    const col=(first+dnum-1)%7;
-    const cls=[dnum===today?'today':'',col===0?'sun':'',col===6?'sat':''].join(' ');
-    html+=`<div class="cal-cell ${cls}">${dnum}</div>`;
-  }
+  for(let n=1;n<=days;n++){const col=(first+n-1)%7;
+    html+=`<div class="cal-cell ${n===today?'today':''} ${col===0?'sun':''} ${col===6?'sat':''}">${n}</div>`;}
   $('#calGrid').innerHTML=html;
 }
 
-/* ---------------- URGENCY / LIVE ---------------- */
+/* ---------- URGENCY / LIVE BUS ---------- */
 function urgency(mins,walk){
   if(mins==null)return{cls:'green',tag:'',dot:false};
   if(mins<=walk)return{cls:'red',tag:'LEAVE NOW',dot:true};
@@ -373,21 +391,20 @@ async function pollEtas(){
   liveRows=await Promise.all(state.watches.map(async w=>{
     try{
       const data=await getEta(w.stop,w.route,w.st);
-      const mins=data.filter(d=>d.dir===w.bound&&d.eta)
-        .sort((a,b)=>(a.eta_seq||0)-(b.eta_seq||0))
-        .map(d=>Math.round((new Date(d.eta).getTime()-now)/60000))
-        .filter(m=>m>=0);
+      const mins=data.filter(d=>d.dir===w.bound&&d.eta).sort((a,b)=>(a.eta_seq||0)-(b.eta_seq||0))
+        .map(d=>Math.round((new Date(d.eta).getTime()-now)/60000)).filter(m=>m>=0);
       return{watch:w,mins};
     }catch(e){return{watch:w,mins:null};}
   }));
 }
 const DEMO=[
-  {watch:{route:'16',label:'To Lam Tin',stopName:'Mong Kok (Park Avenue)',walk:5},mins:[3]},
-  {watch:{route:'16',label:'To Lam Tin',stopName:'Mong Kok (Park Avenue)',walk:5},mins:[14]},
-  {watch:{route:'16',label:'To Lam Tin',stopName:'Mong Kok (Park Avenue)',walk:5},mins:[27]}
+  {watch:{route:'16',label:'To Lam Tin',dest:'Lam Tin (Kwong Tin Estate)',stopName:'Mong Kok (Park Avenue)',walk:5,rideStop:'Kwun Tong Road Sitting-Out Area',rideMin:35},mins:[3]},
+  {watch:{route:'16',label:'To Lam Tin',dest:'Lam Tin (Kwong Tin Estate)',stopName:'Mong Kok (Park Avenue)',walk:5},mins:[14]},
+  {watch:{route:'16',label:'To Lam Tin',dest:'Lam Tin (Kwong Tin Estate)',stopName:'Mong Kok (Park Avenue)',walk:5},mins:[27]}
 ];
+function hhmm(dt){return String(dt.getHours()).padStart(2,'0')+':'+String(dt.getMinutes()).padStart(2,'0');}
 
-/* ---------------- RENDER BOARD ---------------- */
+/* ---------- RENDER BOARD ---------- */
 const stage=$('#stage');
 const badge=(route,cls)=>`<div class="badge ${cls}">${route}</div>`;
 function renderStage(){
@@ -397,20 +414,27 @@ function renderStage(){
   rows.sort((a,b)=>soon(a)-soon(b));
   $('#statusLine').textContent=demo?'DEMO':'LIVE';
   $('#statusLine').className='status'+(demo?' demo':'');
-  if(rows.length===0){
-    stage.innerHTML=`<div class="empty"><div class="big">NO BUSES YET</div><div>Tap &#9881; EDIT to add your routes.</div></div>`;return;
-  }
-  const hero=rows[0],rest=rows.slice(1);
-  const hu=urgency(hero.mins&&hero.mins.length?hero.mins[0]:null,hero.watch.walk);
+  if(rows.length===0){stage.innerHTML=`<div class="empty"><div class="big">NO BUSES YET</div><div>Tap &#9881; EDIT to add your routes.</div></div>`;return;}
+  const hero=rows[0],rest=rows.slice(1),w=hero.watch;
+  const hu=urgency(hero.mins&&hero.mins.length?hero.mins[0]:null,w.walk);
   const heroMin=(hero.mins===null)?'&mdash;':(hero.mins.length?hero.mins[0]:'&mdash;');
   const heroStatus=(hero.mins===null)?'NO SIGNAL':(hero.mins.length===0?'NO SERVICE':hu.tag);
+  const routeLine=`${w.route} &rarr; ${(w.dest||w.label||'').toUpperCase()}`;
+  const fromLine=`FROM ${(w.stopName||'').toUpperCase()}`;
+  let rideLine='';
+  if(w.rideStop&&hero.mins&&hero.mins.length){
+    const arr=new Date(Date.now()+(hero.mins[0]+(w.rideMin||0))*60000);
+    rideLine=`&rarr; ${w.rideStop} &middot; arrive &asymp; ${hhmm(arr)} (est. ${w.rideMin||0} min ride)`;
+  }
   let html=`
     <div class="hero ${hu.cls}">
       <span class="eyebrow">NEXT UP</span>
-      ${badge(hero.watch.route,hu.cls)}
+      ${badge(w.route,hu.cls)}
       <div class="hero-mid">
         <div class="hero-min ${hu.cls}">${heroMin}<span class="unit">MIN</span></div>
-        <div class="hero-sub">${(hero.watch.label||hero.watch.dest||'').toUpperCase()} &middot; ${(hero.watch.stopName||'').toUpperCase()}</div>
+        <div class="hero-sub">${routeLine}</div>
+        <div class="hero-sub2">${fromLine}</div>
+        ${rideLine?`<div class="hero-ride">${rideLine}</div>`:''}
       </div>
       <div class="hero-status ${hu.cls}">${heroStatus}${hu.dot?'<span class="dot"></span>':''}</div>
     </div><div class="rows">`;
@@ -420,14 +444,14 @@ function renderStage(){
     const next=(r.mins&&r.mins.length>1)?`then ${r.mins.slice(1,3).join(' &middot; ')} min`:'';
     const tag=(r.mins===null)?'NO SIGNAL':(r.mins.length===0?'NO SERVICE':u.tag);
     html+=`<div class="row">${badge(r.watch.route,u.cls)}
-      <div class="row-name">${(r.watch.label||r.watch.dest||'').toUpperCase()}<span>${(r.watch.stopName||'').toUpperCase()}</span></div>
+      <div class="row-name">${r.watch.route} &rarr; ${(r.watch.dest||r.watch.label||'').toUpperCase()}<span>${(r.watch.stopName||'').toUpperCase()}</span></div>
       <div class="row-eta"><div class="row-min ${u.cls}">${minTxt}<span class="unit">MIN</span></div>
       <div class="row-tag ${u.cls}">${tag}</div>${next?`<div class="row-next">${next}</div>`:''}</div></div>`;
   }
   html+=`</div>`;stage.innerHTML=html;
 }
 
-/* ---------------- CLOCK / LOOPS ---------------- */
+/* ---------- CLOCK / LOOPS ---------- */
 const DOW=['SUN','MON','TUE','WED','THU','FRI','SAT'];
 const MON=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 function tick(){
@@ -439,17 +463,21 @@ function tick(){
   renderCalendar(false);
 }
 const REFRESH=30;let countdown=REFRESH;
-async function refreshCycle(){await pollEtas();renderStage();countdown=REFRESH;}
+async function refreshCycle(){
+  const [,m]=await Promise.all([pollEtas(),getMtr()]);
+  renderStage();renderMtr(m);countdown=REFRESH;
+}
 function everySecond(){
   tick();countdown--;
   $('#refresh').innerHTML=`&#8635; 0:${String(Math.max(countdown,0)).padStart(2,'0')}`;
   if(countdown<=0)refreshCycle();
 }
+async function refreshWeather(){const [t,w]=await Promise.all([getTemp(),getWarnings()]);renderWeather(t,w);}
 
-/* ---------------- CONFIG ---------------- */
+/* ---------- CONFIG ---------- */
 const ov=$('#overlay');
 let pick={route:null,matches:[],bound:null,st:null,dest:null,stops:[]};
-function applyTitle(){const t=($('#titleInput').value||'').trim()||'TO LAM TIN';state.title=t;$('#destLabel').textContent=t;saveState();}
+function applyTitle(){const t=($('#titleInput').value||'').trim()||'To LAM TIN';state.title=t;$('#destLabel').textContent=t;saveState();}
 function openCfg(){$('#titleInput').value=state.title;renderSaved();ov.classList.add('show');}
 function closeCfg(){ov.classList.remove('show');applyTitle();}
 $('#cfgBtn').onclick=openCfg;$('#closeCfg').onclick=closeCfg;$('#doneBtn').onclick=closeCfg;$('#titleInput').oninput=applyTitle;
@@ -502,15 +530,15 @@ function renderSaved(){
   $('#emptyNote').style.display=state.watches.length?'none':'block';
 }
 
-/* ---------------- WAKE LOCK ---------------- */
+/* ---------- WAKE LOCK ---------- */
 let wakeLock=null,wakeWanted=false;
 async function requestWake(){try{wakeLock=await navigator.wakeLock.request('screen');}catch(e){}}
 function releaseWake(){try{wakeLock&&wakeLock.release();}catch(e){}wakeLock=null;}
 $('#wakeBtn').onclick=async()=>{wakeWanted=!wakeWanted;$('#wakeBtn').classList.toggle('on',wakeWanted);if(wakeWanted)await requestWake();else releaseWake();};
 document.addEventListener('visibilitychange',()=>{if(wakeWanted&&document.visibilityState==='visible')requestWake();});
 
-/* ---------------- FIRST-BOOT PRESETS ---------------- */
-const PRESETS=[{route:'16',destMatch:'lam tin',stopMatch:'mong kok (park avenue)',walk:5,label:'To Lam Tin'}];
+/* ---------- FIRST-BOOT PRESETS ---------- */
+const PRESETS=[{route:'16',destMatch:'lam tin',stopMatch:'mong kok (park avenue)',walk:5,label:'To Lam Tin',rideStop:'Kwun Tong Road Sitting-Out Area',rideMin:35}];
 async function bootstrapPresets(){
   if(state.bootstrapped||state.watches.length)return;
   const routes=await getRoutes();const stops=await getStops();
@@ -523,14 +551,16 @@ async function bootstrapPresets(){
     for(const x of rs){const nm=(nameOf[x.stop]||'').toLowerCase();if(nm.includes(p.stopMatch)){target={stop:x.stop,name:nameOf[x.stop]};break;}}
     if(!target)continue;
     state.watches.push({id:Date.now()+''+Math.random().toString(36).slice(2,6),
-      route:m.route,bound:m.bound,st:m.service_type,stop:target.stop,stopName:target.name,dest:m.dest_en,label:p.label||m.dest_en,walk:p.walk});
+      route:m.route,bound:m.bound,st:m.service_type,stop:target.stop,stopName:target.name,dest:m.dest_en,
+      label:p.label||m.dest_en,walk:p.walk,rideStop:p.rideStop,rideMin:p.rideMin});
   }
   if(state.watches.length){state.bootstrapped=true;saveState();}
 }
 
-/* ---------------- BOOT ---------------- */
+/* ---------- BOOT ---------- */
+migrate();
 $('#destLabel').textContent=state.title;
-tick();renderCalendar(true);renderStage();
+tick();renderCalendar(true);renderStage();renderMtr({up:[],down:[]});
 setInterval(everySecond,1000);
 refreshWeather();setInterval(refreshWeather,5*60*1000);
 bootstrapPresets().catch(()=>{}).finally(refreshCycle);
