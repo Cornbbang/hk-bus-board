@@ -155,7 +155,7 @@ body{font-family:var(--body);color:var(--ink);-webkit-font-smoothing:antialiased
 .hero-mid{flex:1 1 auto;min-width:0}
 .hero-min{
   font-family:var(--display);font-weight:700;
-  font-size:clamp(60px,12vw,150px);line-height:.7;
+  font-size:clamp(52px,9.5vw,118px);line-height:.82;
   font-variant-numeric:tabular-nums;color:var(--ink);
 }
 .hero-min .unit{font-size:.24em;letter-spacing:.05em;margin-left:.3em;color:var(--ink2);font-weight:600}
@@ -194,24 +194,24 @@ body{font-family:var(--body);color:var(--ink);-webkit-font-smoothing:antialiased
 
 .green{color:var(--green)}.amber{color:var(--amber)}.red{color:var(--red)}.blue{color:var(--blue)}
 
-/* ═══ MTR BAR ═══ */
+/* ═══ MTR PANEL (two-row) ═══ */
 .mtr{
   flex-shrink:0;border:1px solid var(--line);border-radius:var(--r16);
   background:var(--side);padding:clamp(10px,1.3vh,16px) clamp(14px,1.8vw,22px);
-  display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);flex-wrap:wrap;
+  display:flex;flex-direction:column;gap:clamp(8px,1vh,13px);
 }
+.mtr-head{display:flex;align-items:center;gap:10px}
 .mtr-badge{
   background:var(--mtr-tcl);color:#fff;
   font-family:var(--display);font-weight:700;
-  font-size:clamp(12px,1.4vw,16px);letter-spacing:.06em;
+  font-size:clamp(12px,1.4vw,15px);letter-spacing:.06em;
   padding:4px 11px;border-radius:8px;flex-shrink:0;white-space:nowrap;
 }
-.mtr-sta{font-size:clamp(12px,1.4vw,16px);font-weight:600;color:var(--ink2);flex-shrink:0;white-space:nowrap}
-.mtr-divider{width:1px;height:28px;background:var(--line);flex-shrink:0}
-.mtr-dirs{display:flex;gap:clamp(14px,2vw,28px);flex:1 1 auto;flex-wrap:wrap}
-.mtr-dir{display:flex;flex-direction:column;gap:3px;min-width:0}
-.mtr-dir-name{font-size:clamp(11px,1.3vw,15px);font-weight:600;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mtr-times{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.8vw,36px);color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;line-height:1}
+.mtr-sta{font-size:clamp(12px,1.4vw,15px);font-weight:600;color:var(--ink2);white-space:nowrap}
+.mtr-rows{display:flex;flex-direction:column;gap:clamp(6px,.9vh,10px)}
+.mtr-dir{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0}
+.mtr-dir-name{font-size:clamp(13px,1.5vw,17px);font-weight:600;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1 1 auto}
+.mtr-times{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,38px);color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;line-height:1;flex-shrink:0}
 .mtr-off{font-size:clamp(12px,1.3vw,15px);color:var(--faint);font-weight:500}
 
 /* ═══ FOOTER ═══ */
@@ -496,7 +496,7 @@ async function getMtr(){
 }
 function renderMtr(m){
   const box=$('#mtr');
-  const head=`<div class="mtr-badge">MTR · TCL</div><div class="mtr-sta">Olympic</div><div class="mtr-divider"></div><div class="mtr-dirs">`;
+  const head=`<div class="mtr-head"><div class="mtr-badge">MTR · TCL</div><div class="mtr-sta">Olympic Station</div></div><div class="mtr-rows">`;
   if(m===null){box.innerHTML=head+`<div class="mtr-off">Train info offline</div></div>`;return;}
   const dir=(arr,label)=>{
     if(!arr.length)return`<div class="mtr-dir"><div class="mtr-dir-name">&rarr; ${label}</div><div class="mtr-times">&mdash;</div></div>`;
